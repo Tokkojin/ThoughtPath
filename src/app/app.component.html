@@ -1,9 +1,22 @@
-<div class="container"><h1 class="title">{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/patients">Patients</a>
-</nav>
+<section class="hero is-primary">
+  <div class="container">
+    <h1 class="title">
+      {{ title }}
+    </h1>
+    <h2 class="subtitle">
+      Providing therapists and patients the compatibility they deserve.
+    </h2>
+
+
+  </div>
+</section>
+<div class="container">
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/patients">Patients</a>
+  </nav>
 </div>
+
 <div class="container">
 <router-outlet></router-outlet>
 </div>
