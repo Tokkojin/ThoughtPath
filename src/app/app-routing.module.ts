@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientsComponent } from './patients/patients.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
-import {TherapistSignUpComponent} from './therapist-sign-up/therapist-sign-up.component';
+import { TherapistSignUpComponent } from './therapist-sign-up/therapist-sign-up.component';
 import { PatientSignUpComponent } from './patient-sign-up/patient-sign-up.component';
 
 
