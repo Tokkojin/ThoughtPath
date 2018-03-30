@@ -1,21 +1,24 @@
-<h2>My Patient</h2>
+<div class="container">
+  <h2>My Patient</h2>
 
-<div>
-  <label>Patient name:
-    <input #patientName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(patientName.value); patientName.value=''">
-    add
-  </button>
+  <div>
+    <label>Patient name:
+      <input #patientName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(patientName.value); patientName.value=''">
+      add
+    </button>
+  </div>
+
+  <ul class="patients">
+    <li *ngFor="let patient of patients">
+      <a routerLink="/detail/{{patient.id}}">
+        <span class="badge">{{patient.id}}</span> {{patient.name}}
+      </a>
+      <button class="delete" title="delete patient"
+              (click)="delete(patient)">x</button>
+    </li>
+  </ul>
+
 </div>
-
-<ul class="patients">
-  <li *ngFor="let patient of patients">
-    <a routerLink="/detail/{{patient.id}}">
-      <span class="badge">{{patient.id}}</span> {{patient.name}}
-    </a>
-    <button class="delete" title="delete patient"
-            (click)="delete(patient)">x</button>
-  </li>
-</ul>
