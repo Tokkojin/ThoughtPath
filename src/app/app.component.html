@@ -1,21 +1,34 @@
 <section class="hero is-primary">
-  <div class="container">
-    <h1 class="title">
-      {{ title }}
-    </h1>
-    <h2 class="subtitle">
-      Providing therapists and patients the compatibility they deserve.
-    </h2>
-
-
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="../assets/favicon.png">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active" routerLink="/dashboard">
+              Dashboard
+            </a>
+            <a class="navbar-item" routerLink="/patients">
+              Patients
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
   </div>
+
 </section>
-<div class="container">
-  <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/patients">Patients</a>
-  </nav>
-</div>
+
 
 <div class="container">
 <router-outlet></router-outlet>
