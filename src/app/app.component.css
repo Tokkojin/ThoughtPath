@@ -6,11 +6,11 @@ h1 {
   margin-bottom: 5%;
 }
 h2 {
-  font-size: 2em;
-  margin-top: 0;
-  margin-bottom: 5%;
-  padding-top: 0;
-}
+   font-size: 2em;
+   margin-top: 0;
+   margin-bottom: 5%;
+   padding-top: 0;
+ }
 nav a {
   padding: 5px 10px;
   text-decoration: none;
@@ -28,4 +28,7 @@ nav a:hover {
 }
 nav a.active {
   color: #039be5;
+}
+footer {
+  text-align: center;
 }

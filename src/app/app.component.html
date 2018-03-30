@@ -18,14 +18,11 @@
             <a class="navbar-item" routerLink="/dashboard">
               Dashboard
             </a>
-            <a class="navbar-item" routerLink="/patients">
-              Patients
-            </a>
             <a class="navbar-item" routerLink="/therapist-sign-up">
-              Therapists
+              Therapist Sign-Up
             </a>
             <a class="navbar-item" routerLink="/patient-sign-up">
-              Sign Up
+              Patient Sign-Up
             </a>
           </div>
         </div>
@@ -35,10 +32,29 @@
 
 </section>
 
+  <div class="container is-light is-fullheight">
+    <router-outlet class="is-fullheight"></router-outlet>
+  </div>
 
-<div class="container">
-<router-outlet></router-outlet>
-</div>
+
+<footer class="footer">
+  <div class="container">
+
+      <div style="font-size: 25px; text-align: center">
+
+        <a href="https://www.facebook.com/Thoughtpathco"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;
+        <a href="https://twitter.com/Thought_Path"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;
+        <a href="https://www.linkedin.com/company/thought-path/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+      </div>
+
+  </div>
+</footer>
+
+
+
 <!-- Error debugging
 <app-messages></app-messages>
 -->
