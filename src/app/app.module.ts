@@ -17,11 +17,14 @@ import { PatientService } from './patient.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     HttpClientModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests

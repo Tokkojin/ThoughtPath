@@ -1,7 +1,12 @@
-<h1>{{title}}</h1>
+<div class="container"><h1 class="title">{{title}}</h1>
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/patients">Patients</a>
 </nav>
+</div>
+<div class="container">
 <router-outlet></router-outlet>
+</div>
+<!-- Error debugging
 <app-messages></app-messages>
+-->
