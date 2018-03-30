@@ -14,11 +14,12 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
 import { PatientsComponent } from './patients/patients.component';
 import { PatientSearchComponent } from './patient-search/patient-search.component';
 import { PatientService } from './patient.service';
+import { TherapistSignUpComponent } from './therapist-sign-up/therapist-sign-up.component';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { TherapistSignUpComponent } from './therapist-sign-up/therapist-sign-up.component';
+
 
 @NgModule({
   imports: [
