@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientsComponent } from './patients/patients.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 import {TherapistSignUpComponent} from './therapist-sign-up/therapist-sign-up.component';
+import { PatientSignUpComponent } from './patient-sign-up/patient-sign-up.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: PatientDetailComponent },
   { path: 'patients', component: PatientsComponent },
-  { path: 'therapist-sign-up', component: TherapistSignUpComponent }
+  { path: 'therapist-sign-up', component: TherapistSignUpComponent },
+  { path: 'patient-sign-up', component: PatientSignUpComponent}
 ];
 
 @NgModule({

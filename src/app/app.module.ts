@@ -19,6 +19,7 @@ import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PatientSignUpComponent } from './patient-sign-up/patient-sign-up.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     PatientDetailComponent,
     MessagesComponent,
     PatientSearchComponent,
-    TherapistSignUpComponent
+    TherapistSignUpComponent,
+    PatientSignUpComponent
   ],
   providers: [ PatientService, MessageService ],
   bootstrap: [ AppComponent ]
