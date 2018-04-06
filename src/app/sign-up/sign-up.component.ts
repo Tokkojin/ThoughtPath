@@ -539,8 +539,9 @@ const surveyJSON = {
 
 function sendDataToServer(survey) {
     // send Ajax request to your web server.
+    var http: HttpClient;
     alert('The results are:' + JSON.stringify(survey.data));
-    this.http.post('URL HERE',
+    http.post("mongodb://localhost:27017/thoughtpath",
       JSON.stringify(survey.data))
       .subscribe(
         (val) => {
@@ -564,7 +565,7 @@ function sendDataToServer(survey) {
 
 export class SignUpComponent implements OnInit {
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit() {
     const survey = new Model(surveyJSON);
