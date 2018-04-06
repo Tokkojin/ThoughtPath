@@ -7,6 +7,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,7 +17,6 @@ import { PatientSearchComponent } from './patient-search/patient-search.componen
 import { PatientService } from './patient.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 
