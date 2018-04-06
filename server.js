@@ -3,11 +3,19 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
 // Get our API routes
-const api = require('.api');
-
+const api = require('./api');
 const app = express();
+
+// Load environment variables from .env file
+dotenv.load();
+
+// Models
+var Patient = require('./models/patient')
+var Therapist = require('./models/therapist')
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -18,6 +26,12 @@ app.use(express.static(path.join(__dirname, 'src')));
 
 // Set our api routes
 app.use('/api', api);
+
+mongoose.connect(process.env.MONGODB, { useMongoClient: true });
+mongoose.connection.on('error', function() {
+  console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+  process.exit(1);
+});
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

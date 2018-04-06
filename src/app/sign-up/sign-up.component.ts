@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, SurveyNG } from 'survey-angular';
+import { Model, SurveyNG, JsonObject } from 'survey-angular';
 import { HttpClient } from '@angular/common/http';
 
 const surveyJSON = {
@@ -536,26 +536,17 @@ const surveyJSON = {
   ]
 };
 
-
-function sendDataToServer(survey) {
-    // send Ajax request to your web server.
-    var http: HttpClient;
-    alert('The results are:' + JSON.stringify(survey.data));
-    http.post("mongodb://localhost:27017/thoughtpath",
-      JSON.stringify(survey.data))
-      .subscribe(
-        (val) => {
-          console.log('POST call successful value returned in body',
-            val);
-        },
-        response => {
-          console.log('POST call in error', response);
-        },
-        () => {
-          console.log('The POST observable is now completed.');
-        });
-
+function determineEitherPatientOrTherapist(survey) {
+    var clientOrTherapist = survey.data.clientOrTherapistQ;
+    //sendDataToServer(survey);
+    if (clientOrTherapist === "client"){
+      // Make sure to use client model
+    }
+    if (clientOrTherapist === "therapist"){
+      // Make sure to use therapist model
+    }
 }
+
 
 @Component({
   selector: 'app-sign-up',
@@ -565,12 +556,30 @@ function sendDataToServer(survey) {
 
 export class SignUpComponent implements OnInit {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    const survey = new Model(surveyJSON);
-    survey.onComplete.add(sendDataToServer);
-    SurveyNG.render('surveyElement', { model: survey });
+      const survey = new Model(surveyJSON);
+      /*also here, call with this*/
+      survey.onComplete.add(this.sendDataToServer);
+      SurveyNG.render('surveyElement', { model: survey });
+  }
+
+  sendDataToServer=(survey)=>{
+      alert('The results are:' + JSON.stringify(survey.data));
+      this.http.post('DATABASE_URL_OMITTED',
+      JSON.stringify(survey.data))
+      .subscribe(
+      (val) => {
+        console.log('POST call successful value returned in body',
+          val);
+      },
+      response => {
+        console.log('POST call in error', response);
+      },
+      () => {
+        console.log('The POST observable is now completed.');
+      });
   }
 
 }
